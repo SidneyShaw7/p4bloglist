@@ -1,0 +1,20 @@
+
+DELETE http://localhost:3003/api/blogs/64ebe5eeecdf69e02d54f191
+
+
+
+### 
+
+POST http://localhost:3003/api/blogs
+content-type: application/json
+
+{
+  "title": "Test",
+  "author": "Nikita",
+  "url": "someurl",
+  "likes": "1"
+}
+###
+
+GET http://localhost:3003/api/blogs
+content-type: application/json
