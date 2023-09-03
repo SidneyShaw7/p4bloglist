@@ -18,3 +18,14 @@ content-type: application/json
 
 GET http://localhost:3003/api/blogs
 content-type: application/json
+
+###
+POST http://fullstack:Prostoparol889@cluster0.zlg6apo.mongodb.net/bloglistApp?retryWrites=true&w=majority
+content-type: application/json
+
+{
+  "title": "Test",
+  "author": "Nikita",
+  "url": "someurl",
+  "likes": "1"
+}

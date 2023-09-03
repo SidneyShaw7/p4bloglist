@@ -41,19 +41,39 @@ test('POST request creates a new blog post', async () => {
 
 test('if the "likes" missing from the request, it will default to 0', async () => {
   const newBlog = {
-    title: 'Test6',
+    title: 'Test12',
     author: 'Sobaka-Sobaka',
     url: 'someurl',
   };
+
+  await api.post('/api/blogs').send(newBlog).expect(201);
+  const updatedBlogs = await api.get('/api/blogs');
+  const lastPosted = updatedBlogs.body[updatedBlogs.body.length - 1];
+  console.log(lastPosted);
+  expect(lastPosted.likes).toBeDefined();
 });
 
-if (newBlog.hasOwnProperty('likes')) {
-  await api
-    .post('/api/blogs')
-    .send(newBlog)
-    .expect(201)
-    .expect('Content-Type', /application\/json/);
-}
+test('if "title" is missing, "400 Bad Request" respond', async () => {
+  const newBlog = {
+    author: 'Sobaka-GG',
+    url: 'someurl',
+    likes: 0,
+  };
+
+  await api.post('/api/blogs').send(newBlog).expect(400);
+  expect(400);
+});
+
+test('if "url" is missing, "400 Bad Request" respond', async () => {
+  const newBlog = {
+    title: 'test13',
+    author: 'Sobaka-GG',
+    likes: 0,
+  };
+
+  await api.post('/api/blogs').send(newBlog).expect(400);
+  expect(400);
+});
 
 afterAll(async () => {
   await mongoose.connection.close();
