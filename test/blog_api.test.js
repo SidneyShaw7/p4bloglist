@@ -20,7 +20,7 @@ test('the unique identifier property of the blog posts is named id', async () =>
 
 test('POST request creates a new blog post', async () => {
   const newBlog = {
-    title: 'Test5',
+    title: 'Test3',
     author: 'Sobaka-Sobaka-Babaka',
     url: 'someurl',
     likes: 1,
@@ -73,6 +73,22 @@ test('if "url" is missing, "400 Bad Request" respond', async () => {
 
   await api.post('/api/blogs').send(newBlog).expect(400);
   expect(400);
+});
+
+test('a blog can be deleted', async () => {
+  const blogsAtStart = await api.get('/api/blogs');
+  const blogToDelete = blogsAtStart.body[0];
+  console.log(blogToDelete);
+
+  await api.delete(`/api/blogs/${blogToDelete.id}`).expect(204);
+
+  const blogsAtEnd = await api.get('/api/blogs');
+
+  expect(blogsAtEnd.body).toHaveLength(blogsAtStart.body.length - 1);
+
+  const title = blogsAtEnd.body.map((b) => b.title);
+
+  expect(title).not.toContain(blogToDelete.title);
 });
 
 afterAll(async () => {
