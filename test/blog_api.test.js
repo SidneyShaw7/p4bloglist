@@ -91,6 +91,21 @@ test('a blog can be deleted', async () => {
   expect(title).not.toContain(blogToDelete.title);
 });
 
+test('a blog can be updated', async () => {
+  const blogsAtStart = await api.get('/api/blogs');
+  const blogToUpdate = blogsAtStart.body[0];
+  console.log(blogToUpdate);
+  blogToUpdate.likes = 3;
+
+  console.log(blogToUpdate);
+  await api.put(`/api/blogs/${blogToUpdate.id}`).send(blogToUpdate).expect(200);
+
+  const blogsAtEnd = await api.get('/api/blogs');
+  const updatedBlog = blogsAtEnd.body[0];
+
+  expect(updatedBlog.likes).toBe(3);
+});
+
 afterAll(async () => {
   await mongoose.connection.close();
 });
