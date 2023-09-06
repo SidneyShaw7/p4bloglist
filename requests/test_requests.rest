@@ -20,12 +20,24 @@ GET http://localhost:3003/api/blogs
 content-type: application/json
 
 ###
-POST http://fullstack:Prostoparol889@cluster0.zlg6apo.mongodb.net/bloglistApp?retryWrites=true&w=majority
+POST http://localhost:3003/api/blogs
 content-type: application/json
 
 {
-  "title": "Test",
-  "author": "Nikita",
-  "url": "someurl",
-  "likes": "1"
+  "title": "Sixth blog by LEEEEE vkusniy",
+  "author": "LEE",
+  "url": "hhtt://vkusnuo/blabla/blublu",
+  "likes": 666,
+  "userId": "64f8eec381856900c4c92687"
+}
+
+###
+POST http://localhost:3003/api/blogs
+content-type: application/json
+
+{
+  "title": "Fifth blog by LEEEEE vkusniy",
+  "author": "LEE",
+  "url": "hhtt://vkusnuo/blabla/blublu",
+  "userId": "64f8eec381856900c4c92687"
 }

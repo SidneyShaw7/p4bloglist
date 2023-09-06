@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const logger = require('./utils/logger');
 const middleware = require('./utils/middleware');
 const blogsRouter = require('./controllers/blogs');
+const usersRouter = require('./controllers/users');
 
 mongoose.set('strictQuery', false);
 
@@ -30,6 +31,7 @@ app.use(middleware.requestLogger);
 
 // API Routes
 app.use('/api/blogs', blogsRouter);
+app.use('/api/users', usersRouter);
 
 // Error handling middleware
 app.use(middleware.unknownEndpoint);
