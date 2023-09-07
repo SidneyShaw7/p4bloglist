@@ -41,3 +41,43 @@ content-type: application/json
   "url": "hhtt://vkusnuo/blabla/blublu",
   "userId": "64f8eec381856900c4c92687"
 }
+
+###
+POST http://localhost:3003/api/blogs
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YTk5OSIsImlkIjoiNjRmYTRjOTY2YWQwMTk1MGQzNjdmYTEzIiwiaWF0IjoxNjk0MTI1MjE1LCJleHAiOjE2OTQxMjg4MTV9.fVR3UIchxqOy42PgVtKiAJ6sHfMo2Y7ecFwjn3LROdE
+
+  {
+  "title": "8th blog by LEEEEE vkusniy999",
+  "author": "LEEe",
+  "url": "hhtt://vkusnuo/blabla/blublu999"
+}
+
+###
+POST http://localhost:3003/api/blogs
+content-type: application/json
+
+  {
+  "title": "8th blog by LEEEEE vkusniy999",
+  "author": "LEEe",
+  "url": "hhtt://vkusnuo/blabla/blublu999"
+}
+
+###
+POST http://localhost:3003/api/login
+content-type: application/json
+
+{
+  "username": "nikita999",
+  "password": "dimitriv"
+}
+
+###
+POST http://localhost:3003/api/users
+content-type: application/json
+
+{
+"username": "nikita999", 
+"name": "Nikita", 
+"password": "dimitriv"
+}
