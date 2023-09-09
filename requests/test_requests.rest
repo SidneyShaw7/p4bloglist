@@ -45,13 +45,17 @@ content-type: application/json
 ###
 POST http://localhost:3003/api/blogs
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YTk5OSIsImlkIjoiNjRmYTRjOTY2YWQwMTk1MGQzNjdmYTEzIiwiaWF0IjoxNjk0MTI1MjE1LCJleHAiOjE2OTQxMjg4MTV9.fVR3UIchxqOy42PgVtKiAJ6sHfMo2Y7ecFwjn3LROdE
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbnlhOTk5IiwiaWQiOiI2NGZiYTZhODBjM2U1ZDgzMzZiOWFjZTEiLCJpYXQiOjE2OTQyMjQ2MzcsImV4cCI6MTY5NDIyODIzN30.MOI_PeHdx2LsKCV_DFNGKUf0EQ5BfO4lTpYVLc-3ZDw
 
   {
-  "title": "8th blog by LEEEEE vkusniy999",
-  "author": "LEEe",
+  "title": "9199th blog by blabla vkusniy999",
+  "author": "nikita",
   "url": "hhtt://vkusnuo/blabla/blublu999"
 }
+
+###
+DELETE http://localhost:3003/api/blogs/64fba8700c3e5d8336b9ad08
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbnlhOTk5IiwiaWQiOiI2NGZiYTZhODBjM2U1ZDgzMzZiOWFjZTEiLCJpYXQiOjE2OTQyMjE2MzEsImV4cCI6MTY5NDIyNTIzMX0.-hCCsJDG5gzDwudBR2dQ6YnXLOFkcc9Tr1jiUMXZATI
 
 ###
 POST http://localhost:3003/api/blogs
@@ -68,7 +72,7 @@ POST http://localhost:3003/api/login
 content-type: application/json
 
 {
-  "username": "nikita999",
+  "username": "sonya999",
   "password": "dimitriv"
 }
 
@@ -77,7 +81,7 @@ POST http://localhost:3003/api/users
 content-type: application/json
 
 {
-"username": "nikita999", 
-"name": "Nikita", 
+"username": "sonya9999", 
+"name": "Sonya", 
 "password": "dimitriv"
 }
