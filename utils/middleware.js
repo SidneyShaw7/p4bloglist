@@ -32,6 +32,7 @@ const userExtractor = async (request, response, next) => {
     return response.status(404).json({ error: 'User not found' });
   }
   request.user = user;
+  request.userId = decodedToken.id;
   next();
 };
 

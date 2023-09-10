@@ -4,7 +4,8 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 blogsRouter.get('/', async (request, response) => {
-  const blogs = await Blog.find({}).populate('user', {
+  const userIdFromToken = request.userId;
+  const blogs = await Blog.find({ user: userIdFromToken }).populate('user', {
     username: 1,
     name: 1,
     id: 1,
@@ -14,11 +15,6 @@ blogsRouter.get('/', async (request, response) => {
 
 blogsRouter.post('/', async (request, response) => {
   const body = request.body;
-  // const decodedToken = jwt.verify(request.token, process.env.SECRET);
-  // if (!decodedToken.id) {
-  //   return response.status(401).json({ error: 'token invalid' });
-  // }
-  // const user = await User.findById(decodedToken.id);
   const user = request.user;
 
   const blog = new Blog({
@@ -34,25 +30,16 @@ blogsRouter.post('/', async (request, response) => {
   }
 
   const savedBlog = await blog.save();
-  console.log(savedBlog);
-  console.log(savedBlog._id);
   user.blogs = user.blogs.concat(savedBlog._id);
   await user.save();
 
-  response.json(savedBlog);
+  response.status(201).json(savedBlog);
 });
 
 blogsRouter.delete('/:id', async (request, response) => {
-  // const decodedToken = jwt.verify(request.token, process.env.SECRET);
-  // if (!decodedToken.id) {
-  //   return response.status(401).json({ error: 'token invalid' });
-  // }
-
-  // const user = await User.findById(decodedToken.id);
   const user = request.user;
   const blog = await Blog.findById(request.params.id);
-  console.log(user);
-  console.log(blog);
+
   if (blog.user.toString() === user.id.toString()) {
     await Blog.findByIdAndRemove(request.params.id);
     response.status(204).end();
@@ -62,9 +49,8 @@ blogsRouter.delete('/:id', async (request, response) => {
   user.blogs = user.blogs.filter(
     (userBlog) => userBlog.toString() !== blog._id.toString()
   );
-  console.log(user.blogs);
+
   await user.save();
-  // user.blogs = correctedBlogs;
 });
 
 blogsRouter.put('/:id', async (request, response) => {
