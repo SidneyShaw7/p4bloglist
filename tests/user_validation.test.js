@@ -3,7 +3,6 @@ const supertest = require('supertest');
 const app = require('../app');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
-const helper = require('./test_helper');
 
 const api = supertest(app);
 
@@ -19,7 +18,6 @@ describe('when there is initially one user in DB', () => {
   });
 
   test('creation succeeds with a fresh username', async () => {
-    // const usersAtStart = helper.usersInDb();
     const usersAtStart = await api.get('/api/users');
 
     const newUser = {
@@ -34,10 +32,7 @@ describe('when there is initially one user in DB', () => {
       .expect(201)
       .expect('Content-Type', /application\/json/);
 
-    // const usersAtEnd = await helper.usersInDb();
     const usersAtEnd = await api.get('/api/users');
-    console.log(usersAtEnd.body);
-    console.log(usersAtStart.body);
     expect(usersAtEnd.body).toHaveLength(usersAtStart.body.length + 1);
 
     const usernames = usersAtEnd.body.map((u) => u.username);

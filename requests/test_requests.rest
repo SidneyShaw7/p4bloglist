@@ -55,11 +55,11 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa
 ###
 POST http://localhost:3003/api/blogs
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbnlhODg4OCIsImlkIjoiNjRmY2U0ZTE3MmJkODk1ZDkyYjY0OTM0IiwiaWF0IjoxNjk0Mjk1Mjc2LCJleHAiOjE2OTQyOTg4NzZ9.1mHqi_mXpH7n5FMk10NPM4zsLP8M2u35TMK8T4iQDpU
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YTg4ODgiLCJpZCI6IjY0ZmVmYjcyZmNkZmM0MzVlMGNjOTcyNyIsImlhdCI6MTY5NDQzMjE5MiwiZXhwIjoxNjk0NDM1NzkyfQ.dmlUxlrZ4Hg9e6L-XfqOdEEaUM_o4K34PAHOl5Qkt1c
 
   {
-  "title": "3th blog by blabla vkusniy999",
-  "author": "sonya8888",
+  "title": "3d blog by blabla vkusniy999",
+  "author": "nikita8888",
   "url": "hhtt://vkusnuo/blabla/blublu999"
 }
 
@@ -82,7 +82,7 @@ POST http://localhost:3003/api/login
 content-type: application/json
 
 {
-  "username": "sonya8888",
+  "username": "nikita8888",
   "password": "dimitriv"
 }
 
@@ -91,7 +91,7 @@ POST http://localhost:3003/api/users
 content-type: application/json
 
 {
-"username": "sonya8888", 
-"name": "Sonya", 
-"password": "dimitriv"
+"username": "nikitaWINNERprogrammer", 
+"name": "nikita", 
+"password": "dimi"
 }
