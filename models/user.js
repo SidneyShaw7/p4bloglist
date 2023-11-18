@@ -16,6 +16,15 @@ const userSchema = new mongoose.Schema({
       ref: 'Blog',
     },
   ],
+  comments: [
+    {
+      text: String,
+      blog: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Blog',
+      },
+    },
+  ],
 })
 
 userSchema.plugin(uniqueValidation)

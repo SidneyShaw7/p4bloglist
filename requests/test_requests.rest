@@ -34,28 +34,25 @@ content-type: application/json
 ###
 POST http://localhost:3003/api/blogs
 content-type: application/json
-
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YTk5OTkiLCJpZCI6IjY0ZmNlNDRhNzJiZDg5NWQ5MmI2NDkxZSIsImlhdCI6MTY5NDI5NTEzMSwiZXhwIjoxNjk0Mjk4NzMxfQ.9MjYsEnLiGfsjFCwY_GzsoNLn9vCdQCp0mm2JySLl-E
 {
   "title": "Fifth blog by LEEEEE vkusniy",
   "author": "LEE",
   "url": "hhtt://vkusnuo/blabla/blublu",
-  "userId": "64f8eec381856900c4c92687"
 }
 
 ###
-POST http://localhost:3003/api/blogs
+POST http://localhost:3003/api/blogs/65427b92159e0fc70ea5655f/comments
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YTk5OTkiLCJpZCI6IjY0ZmNlNDRhNzJiZDg5NWQ5MmI2NDkxZSIsImlhdCI6MTY5NDI5NTEzMSwiZXhwIjoxNjk0Mjk4NzMxfQ.9MjYsEnLiGfsjFCwY_GzsoNLn9vCdQCp0mm2JySLl-E
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YVdJTk5FUnByb2dyYW1tZXIiLCJpZCI6IjY1MzFhMjBlOWQ5YzJiNGRjNjc0YjI3NiIsImlhdCI6MTY5ODg1NTgwNywiZXhwIjoxNjk4ODU5NDA3fQ.OLKoie5yAKHnXUdtL-LFRw5cWdt2DCRFumER3ikrH84
 
   {
-  "title": "4th blog by blabla vkusniy999",
-  "author": "nikita9999",
-  "url": "hhtt://vkusnuo/blabla/blublu999"
+  "text": "testinggg"
 }
 ###
 POST http://localhost:3003/api/blogs
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YTg4ODgiLCJpZCI6IjY0ZmVmYjcyZmNkZmM0MzVlMGNjOTcyNyIsImlhdCI6MTY5NDQzMjE5MiwiZXhwIjoxNjk0NDM1NzkyfQ.dmlUxlrZ4Hg9e6L-XfqOdEEaUM_o4K34PAHOl5Qkt1c
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2l0YVdJTk5FUnByb2dyYW1tZXIiLCJpZCI6IjY1MzFhMjBlOWQ5YzJiNGRjNjc0YjI3NiIsImlhdCI6MTY5ODg1NTgwNywiZXhwIjoxNjk4ODU5NDA3fQ.OLKoie5yAKHnXUdtL-LFRw5cWdt2DCRFumER3ikrH84
 
   {
   "title": "3d blog by blabla vkusniy999",
@@ -82,8 +79,8 @@ POST http://localhost:3003/api/login
 content-type: application/json
 
 {
-  "username": "nikita8888",
-  "password": "dimitriv"
+  "username": "nikitaWINNERprogrammer",
+  "password": "dimi"
 }
 
 ###
